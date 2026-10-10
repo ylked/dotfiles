@@ -18,6 +18,10 @@ if [[ -f $DOTFILES_DIR/local.zsh ]]; then
   source $DOTFILES_DIR/local.zsh
 fi
 
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init zsh --cmd cd)"
+fi
+
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting docker)
 
 export ZSH="$HOME/.oh-my-zsh"
